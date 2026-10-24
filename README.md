@@ -71,6 +71,8 @@ The engine searches legal moves at every ply. It does not use Stockfish's ordina
 
 The UCI check options `Use TT`, `Use PVS`, and `Use Aspiration` allow each optimization to be disabled for comparisons. Search statistics are printed before `bestmove`. `MultiPV` is limited to one line.
 
+The [recorded comparison with 0.1](docs/BENCHMARKS.md) used nine positions and three repetitions. Seven non-proof positions averaged 10.6% fewer nodes geometrically, and three positions reached one ply deeper in one second. One middlegame case regressed. All fixed-depth scores matched; these are search-efficiency results, not an Elo claim. The local validation suites passed 2,792 checks.
+
 This is a finite-depth engine. It can prove selfmates within its completed search, but does not solve arbitrary positions or guarantee the globally worst ordinary chess move. Quiet selfmate plans beyond the horizon can remain invisible. It detects familiar material dead positions conservatively: bare kings, a single minor piece, or bishops confined to the same square color. Other dead positions, such as some permanently blocked pawn structures, are not recognized automatically.
 
 ## License
